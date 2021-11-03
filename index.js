@@ -339,7 +339,7 @@ function getRandomFlavors(array1, array2, array3, array4){
   ];
   let randomFlavors = [];
   while(randomFlavors.length<31){
-  let randomFlavorPicker = Math.floor(Math.random() * mergedArrays.length-1)
+  let randomFlavorPicker = Math.floor(Math.random() * mergedArrays.length)
   randomFlavors.push(mergedArrays[randomFlavorPicker])
   }
 
