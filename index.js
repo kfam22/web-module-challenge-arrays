@@ -190,19 +190,20 @@ Use the filterByWord function below to do the following:
 
 // 2 parameters array/string
 function filterByWord(array, string){
-  const filtered = []
-  for(let i = 0; i<array.length; i++){
+  const filtered = [];
+  for(let i = 0; i < array.length;i++){
     if(array[i].includes(string)){
-      filtered.push(array[i]);
+      filtered.push(array[i])
     }
   }
   return filtered
 }
 
-// console.log('task7', filterByWord(originalFlavors, 'chocolate'));
+console.log('task7', filterByWord(originalFlavors, 'chocolate'));
 // create a new array to push results
 //  loop through provided array and check each index, if index .includes string
 // 
+
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
