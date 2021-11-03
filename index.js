@@ -337,15 +337,24 @@ function getRandomFlavors(array1, array2, array3, array4){
     ...array3,
     ...array4,
   ];
+  let randomFlavors = [];
+  while(randomFlavors.length<31){
   let randomFlavorPicker = Math.floor(Math.random() * mergedArrays.length-1)
+  randomFlavors.push(mergedArrays[randomFlavorPicker])
+  }
+
   // return randomFlavorPicker;
   // uncomment above line to test random flavor picker
-  return mergedArrays[randomFlavorPicker];
+  return randomFlavors;
 }
 // getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors);
 console.log(getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors));
 
-
+// while loop format:
+// while (i < 10) {
+//   text += "The number is " + i;
+//   i++;
+// }
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
 // const newFlavors = [
 //   "Date night",
