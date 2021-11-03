@@ -45,11 +45,12 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
-  /*your code here*/
+function copy(array){
+  return [...array]
 }    
 
-
+copy(originalFlavors);
+// console.log(copy(originalFlavors));
 
 
 
@@ -64,9 +65,15 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
- /*your code here*/
+function is31Flavors(array){
+ if (array.length === 31){
+   return true;
+ } else {
+   return false;
+ }
 }
+is31Flavors(originalFlavors);
+// console.log(is31Flavors(originalFlavors));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -80,11 +87,16 @@ Use the addFlavor function below to do the following:
   For example: addFlavor(originalFlavors, "Rainbow Sherbert") should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
 
-
-function addFlavor(/*your code here*/){
- /*your code here*/
+// 2 parameters, array and string (for new flavor)
+//  use unshift to add the new flavor to the beginning
+// return the array
+function addFlavor(array,string){
+  array.unshift(string);
+  return array;
 }
 
+(addFlavor(originalFlavors, 'Rainbow Sherbert'));
+// console.log(addFlavor(originalFlavors, 'Rainbow Sherbert'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -97,11 +109,15 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+
+function removeLastFlavor(array){
+  array.pop();
+  return array;
 }
+// use pop to remove the last item, then return array
 
-
+removeLastFlavor(originalFlavors);
+// console.log(removeLastFlavor(originalFlavors));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that returns a flavor at a given index in the array.
@@ -114,10 +130,13 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+// 2 parameters: array, number
+function getFlavorByIndex(array, index){
+  return array[index];
 }
-
+// return array[number]
+getFlavorByIndex(originalFlavors, 21);
+// console.log(getFlavorByIndex(originalFlavors, 0));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
@@ -133,11 +152,20 @@ Use the removeFlavorByName function below to do the following:
 
   HINT: You can use .splice() for this
 */
-
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+// 2 parameters: array, string we want to remove
+function removeFlavorByName(array, string){
+ for(let i = 0; i < array.length; i++){
+   if (array[i] === string){
+     array.splice(i,1)
+   }
+ }
+ return array;
 }
-
+// loop through the array and check each index for the exact match of string, it it exists, remove using splice
+// .splice(start, how many itms to delete)
+// outside of the loop, return the array
+removeFlavorByName(originalFlavors,'Date Nut');
+// console.log(removeFlavorByName(originalFlavors,'Date Nut'));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -160,9 +188,21 @@ Use the filterByWord function below to do the following:
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+// 2 parameters array/string
+function filterByWord(array, string){
+  const filtered = []
+  for(let i = 0; i<array.length; i++){
+    if(array[i].includes(string)){
+      filtered.push(array[i]);
+    }
+  }
+  return filtered
 }
+
+// console.log('task7', filterByWord(originalFlavors, 'chocolate'));
+// create a new array to push results
+//  loop through provided array and check each index, if index .includes string
+// 
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
